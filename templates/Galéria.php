@@ -12,20 +12,20 @@
       <input type="radio" name="r" id="r4" checked>
       <input type="radio" name="r" id="r5" checked>
       <div class="slide s1">
-        <img src="img/allianz1.jpeg" alt="">
+        <img src="../img/allianz1.jpeg" alt="">
       </div>
       <div class="slide">
-        <img src="img/fans1.jpeg" alt="">
+        <img src="../img/fans1.jpeg" alt="">
       
       </div>
       <div class="slide">
-        <img src="img/team.jpeg" alt="">
+        <img src="../img/team.jpeg" alt="">
       </div>
       <div class="slide">
-        <img src="img/allianz2.jpeg" alt="">
+        <img src="../img/allianz2.jpeg" alt="">
       </div>
       <div class="slide">
-        <img src="img/pic1.jpeg" alt="">
+        <img src="../img/pic1.jpeg" alt="">
       </div>
     </div>  
     <div class="navigation">
