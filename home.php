@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doma</title>
-    <link rel="stylesheet" href="css/style1.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<?php 
+ include_once('partials/header.php'); 
+ ?>
+
     
-</head>
+
 <body>
-    <header>
-        <a href="home.html"><img class="logo" src="img/logo.png" alt="Bayern Logo"></a>
-        <h1>Bayern München fanklub</h1>
-        <nav>
-            <ul>
-                <li><a href="home.html">Domov</a></li>
-                <li><a href="Tím.html">Zostava</a></li>
-                <li><a href="Galéria.html">Galéria</a></li>
-                <li><a href="kontakt.html">Prihlásenie</a></li>
-            </ul>
-        </nav>
-    </header>
+ 
 
 <div class="nadpis">
 <button class="accordion">Bayern</button>
@@ -60,37 +46,14 @@
 </div> 
     
 
-<a href="tel:0944832177"><i class="fa-solid fa-phone fa-beat" style="color: #000000;"></i></a>
-<a href="mailto:palffypatrik3@gmail.com"><i class="fa-solid fa-envelope fa-beat" style="color: #000000;"></i></a>
- 
+
 <a href="#" class="to-top">
     <i class="fas fa-chevron-up"></i>
   </a>
-<footer>
-<div class="footerContainer">
-    <div class="socialIcons">
-        <a href="https://www.instagram.com/fcbayern/"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.facebook.com/fcbayern.en"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.youtube.com/@fcbayern"><i class="fa-brands fa-youtube"></i></a>
-        
-    </div>
-    <div class="footerNav">
-        <ul>
-            <li><a href="home.html">Domov</a></li>
-            <li><a href="Tím.html">Zostava</a></li>
-            <li><a href="Galéria.html">Galéria</a></li>
-            <li><a href="kontakt.html">Prihlásenie</a></li>
-        </ul>
-       
-        
-        
-    </div>
-</div>
-<div class="footerBottom">
-    <p>Copyright &copy; Toto je oficiálna stránka fanklubu</p>
-</div>
-</footer>
-</body>
-<script src="js/script.js"></script>
 
-</html>
+</body>
+<?php
+    include_once('partials/footer.php');
+  ?>  
+
+
