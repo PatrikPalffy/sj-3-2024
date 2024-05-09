@@ -24,9 +24,9 @@
         ?>
         </div>
         <div class="footerBottom">
-            <p>Copyright &copy; Toto je oficiálna stránka fanklubu</p>
+            <p>Copyright &copy;          Toto je oficiálna stránka fanklubu</p>
         </div>
     </footer>
 </body>
-<script src="../js/script.js"></script>
+<script src="../assets/js/script.js"></script>
 </html>

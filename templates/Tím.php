@@ -4,21 +4,21 @@
 <body>
     <div class="pozic">
     <h1 class="border1">Brankári</h1>
-    <a href="neuer.html"><img src="../img/neuer.webp" alt=""></a>
+    <a href="../templates/neuer.php"><img src="../assets/img/neuer.webp" alt=""></a>
     
     <hr>
      <h1 class="border2">Obrancovia</h1>
-    <a href="upa.html"><img src="../img/upa.webp" alt="" ></a>
-    <a href="kim.html"><img src="../img/kim.webp" alt=""></a>
+    <a href="../templates/upa.php"><img src="../assets/img/upa.webp" alt="" ></a>
+    <a href="../templates/kim.php"><img src="../assets/img/kim.webp" alt=""></a>
     
     <hr>
     <h1 class="border3">Záložníci</h1>
-    <a href="kimmich.html"><img src="../img/kimmich.webp" alt=""></a>
-    <a href="goretzka.html"><img src="../img/goretzka.webp" alt=""></a>
+    <a href="../templates/kimmich.php"><img src="../assets/img/kimmich.webp" alt=""></a>
+    <a href="../templates/goretzka.php"><img src="../assets/img/goretzka.webp" alt=""></a>
     
     <hr>
     <h1 class="border4">Útočníci</h1>
-    <a href="sane.html"><img src="../img/sane.webp" alt=""></a>
+    <a href="../templates/sane.php"><img src="../assets/img/sane.webp" alt=""></a>
     
 </div>
 
