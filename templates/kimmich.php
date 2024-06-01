@@ -20,23 +20,7 @@
             <td>Rottweil, Nemecko</td>
         </tr>
     </table>
-    <h2>Štatistiky hráča</h2>
-    <table bgcolor="black" >
-        <tr bgcolor="RoyalBlue" align="center">
-            <th width="150">Zápasy</th>
-            <th width="150">Góly</th>
-            <th width="150">Asistencia</th>
-            <th width="150">Žlté karty</th>
-            <th width="150">Červené karty</th>
-        </tr>
-        <tr bgcolor="RoyalBlue "align="center">
-            <td>385</td>
-            <td>40</td>
-            <td>94</td>
-            <td>49</td>
-            <td>2</td>
-        </tr>
-    </table>
+    <h2><a href="stats.php">Štatistiky hráča</a></h2>
     <?php
     include_once('partials/footer.php');
   ?>  

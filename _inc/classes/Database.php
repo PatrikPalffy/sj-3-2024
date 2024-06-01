@@ -3,7 +3,7 @@
     class Database{
 
         private $host = 'localhost';
-        private $db_name = 'sj_3_2024';
+        private $db_name = 'Palffy_projekt';
         private $user_name = 'root';
         private $password = '';
     

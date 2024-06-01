@@ -1,74 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Registrácia</title>
-  <link rel="stylesheet" href="css/style1.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
-<body>
-  <header>
-    <a href="home.html"><img class="logo" src="img/logo.png" alt="Bayern Logo"></a>
-    <h1>Bayern München fanklub</h1>
-    <nav>
-        <ul>
-            <li><a href="home.html">Domov</a></li>
-            <li><a href="Tím.html">Zostava</a></li>
-            <li><a href="Galéria.html">Galéria</a></li>
-            <li><a href="kontakt.html">Prihlásenie</a></li>
-        </ul>
-    </nav>
-</header>
+<?php
+    include('partials/header.php');
+    
+
+    $user_object = new User();
+
+    // Spracovanie údajov z formulára po odoslaní
+    if(isset($_POST['user_register'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password'];
+        
+
+        // Kontrola, či sa zadané heslá zhodujú
+        if($password === $confirm_password) {
+            // Volanie metódy register() na vytvorenie používateľa
+            if($user_object->register($email, $password)) {
+                // Registrácia bola úspešná
+                echo "<p>Registrácia bola úspešná. Teraz sa môžete prihlásiť.</p>";
+            } else {
+                // Registrácia zlyhala
+                echo "<p>Registrácia zlyhala. Skúste to prosím znova.</p>";
+            }
+        } else {
+            // Heslá sa nezhodujú
+            echo "<p>Heslá sa nezhodujú. Skúste to prosím znova.</p>";
+        }
+    }
+?> 
 
 <div class="box">
   <div class="cont1">
-    <form id="registerForm" class="bayern-form" onsubmit="return validateForm()">
+    <form id="registerForm" class="bayern-form" action="" method="Post">
       <h2>Registrácia</h2>
-      <div class="input-group">
-        <label for="fullName">Celé meno</label>
-        <input type="text" id="fullName" name="fullName" required>
-      </div>
-      <div class="input-group">
-        <label for="username">Používateľské meno</label>
-        <input type="text" id="username" name="username" required>
-      </div>
       <div class="input-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
         <p id="emailError" class="error-message"></p>
       </div>
+     
       <div class="input-group">
-        <label for="phoneNumber">Tel.číslo</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" required>
+        <label for="password">Heslo</label>
+        <input type="password" id="password" name="password" required>
       </div>
-      <button type="submit">Register</button>
+      <div class="input-group">
+        <label for="confirm_password">Confirm Heslo</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+      </div>
+      
+      
+      <button type="submit" name="user_register">Register</button>
     </form>
   </div>
 </div>
-  <script src="js/script.js"></script>
-  <footer>
-    <div class="footerContainer">
-        <div class="socialIcons">
-            <a href="https://www.instagram.com/fcbayern/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/fcbayern.en"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.youtube.com/@fcbayern"><i class="fa-brands fa-youtube"></i></a>
-            
-        </div>
-        <div class="footerNav">
-            <ul>
-                <li><a href="home.html">Domov</a></li>
-                <li><a href="Tím.html">Zostava</a></li>
-                <li><a href="Galéria.html">Galéria</a></li>
-                <li><a href="kontakt.html">Prihlásenie</a></li>
-            </ul>
-           
-            
-            
-        </div>
-    </div>
-    <div class="footerBottom">
-        <p>Copyright &copy; Toto je oficiálna stránka fanklubu</p>
-    </div>
-    </footer>
-</body>
-</html>
+  
+  <?php
+    include_once('partials/footer.php');
+  ?>  

@@ -18,12 +18,15 @@
             $pages = array('Domov'=>'home.php',
             'Zostava'=>'Tím.php',
             'Galeria'=>'Galéria.php',
-            'Kontakt'=>'kontakt.php'  
+            'Kontakt'=>'kontakt.php',
+            'Odhlasit'=>'logout.php'
+
             );
 
             foreach($pages as $page_name => $page_url){
               echo('<li><a href = "'.$page_url.'">'.$page_name.'</a></li>');
             }
+            require('../_inc/functions.php');
         
        ?>
        </ul>
