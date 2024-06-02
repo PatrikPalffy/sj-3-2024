@@ -30,30 +30,29 @@ if(isset($_SESSION['logged_in'])&&$_SESSION['is_admin']==true){
             </div>
         </form>
         <?php
-                    if(isset($_POST['user_login'])){
-                        $email = $_POST['email'];
-                        $password = $_POST['password']; 
+    // Skontrolovanie, či bol odoslaný formulár na prihlásenie
+    if (isset($_POST['user_login'])) {
+        $email = $_POST['email']; // Získanie emailu z formulára
+        $password = $_POST['password']; // Získanie hesla z formulára
 
-                        $user_object = new User();
+        $user_object = new User(); // Vytvorenie inštancie triedy User
 
-                        $login_success = $user_object->login($email,$password);
-                        //ak metóda vráti TRUE
-                        if($login_success == true){
-                            if($_SESSION['is_admin'] == 1){
-                              header('Location: admin.php');
-                            }
-                            else{
-                              header('Location: home.php');
-                              die;
-                            }
-                      
-                          }else{
-                              echo 'Nesprávne meno alebo heslo';
-                      
-                          }
+        $login_success = $user_object->login($email, $password); // Volanie metódy na prihlásenie
 
-                    }
-                ?>
+        // Ak metóda vráti TRUE
+        if ($login_success == true) {
+            if ($_SESSION['is_admin'] == 1) {
+                header('Location: admin.php'); // Presmerovanie na administrátorskú stránku, ak je používateľ admin
+            } else {
+                header('Location: home.php'); // Presmerovanie na domovskú stránku, ak nie je admin
+                die; // Ukončenie skriptu
+            }
+        } else {
+            echo 'Nesprávne meno alebo heslo'; // Zobrazenie chybovej správy
+        }
+    }
+?>
+
     </div>
     </div>
 </section> 

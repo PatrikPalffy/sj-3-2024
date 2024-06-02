@@ -1,78 +1,59 @@
 <?php
 
-    class Page{
-        private $page_name;
+// Definícia triedy Page
+class Page{
+    // Privátna premenná pre názov stránky
+    private $page_name;
 
-        public function set_page_name($page_name)
-        {
-            $this->page_name = $page_name;
-        }
-
-        function add_stylesheet() {
-            $result =  '<link rel="stylesheet" href="../assets/css/style.css">
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">';
-        
-           //$page_name = basename($_SERVER["SCRIPT_NAME"], '.php');
-            
-            switch($this->page_name){
-                case 'home':
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    break;
-                    
-                case 'kontakt':
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    break;
-
-                case 'kontakt-update':
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    break;
-                
-                case 'register':
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    break;
-                
-                case 'login':
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    break;
-               
-                case 'portfolio':
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    break;
-                case 'qna':
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    break;
-                case 'thankyou':
-                    $result .= '<link rel="stylesheet" href="../assets/css/style1.css">';
-                    break;
-            }
-            return $result;
-        }
-
-        function add_scripts(){
-            $result = '<script src="../assets/js/script.js"></script>';
-            //$page_name = basename($_SERVER["SCRIPT_NAME"],'.php');
-            switch($this->page_name){
-            case 'home':
-                $result .= '<script src="../assets/js/script.js"></script>';
-                break;
-            case 'qna':
-                $result .= '<script src="../assets/js/script.js"></script>';
-                break;  
-            }
-            return $result;   
-        }
-        
-        function redirect_homepage(){
-            header("Location: templates/home.php");
-            die("Nepodarilo sa nájsť Domovskú stránku");
-        }
-
+    // Metóda na nastavenie názvu stránky
+    public function set_page_name($page_name)
+    {
+        $this->page_name = $page_name; // Nastavenie hodnoty pre premennú $page_name
     }
+
+    // Metóda na pridanie štýlových súborov do stránky
+    function add_stylesheet() {
+        // Štandardné štýly a štýly z Font Awesome
+        $result =  '<link rel="stylesheet" href="../assets/css/style.css">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">';
+        
+        // Rozšírené štýly pre konkrétne stránky
+        switch($this->page_name){
+            case 'home':
+            case 'kontakt':
+            case 'kontakt-update':
+            case 'register':
+            case 'login':
+            case 'portfolio':
+            case 'qna':
+            case 'thankyou':
+                $result .= '<link rel="stylesheet" href="../assets/css/style1.css">'; // Špecifické štýly pre danú stránku
+                break;
+        }
+        return $result; // Vrátenie výsledku
+    }
+
+    // Metóda na pridanie skriptov do stránky
+    function add_scripts(){
+        // Základný skript
+        $result = '<script src="../assets/js/script.js"></script>';
+        
+        // Rozšírené skripty pre konkrétne stránky
+        switch($this->page_name){
+            case 'home':
+            case 'qna':
+                $result .= '<script src="../assets/js/script.js"></script>'; // Skript pre konkrétnu stránku
+                break;  
+        }
+        return $result; // Vrátenie výsledku
+    }
+    
+    // Metóda na presmerovanie na domovskú stránku
+    function redirect_homepage(){
+        header("Location: templates/home.php"); // Presmerovanie na domovskú stránku
+        die("Nepodarilo sa nájsť Domovskú stránku"); // Vypíše chybu ak sa nepodarilo presmerovať
+    }
+
+}
 
 ?>
